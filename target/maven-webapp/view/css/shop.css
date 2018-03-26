@@ -1,0 +1,181 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.bian{
+	margin: 0 auto;
+	/*margin-right: 100px;*/
+	width: 1200px;
+}
+
+/*标题*/
+.ti{
+	list-style: none;
+	font-size: 13px;
+	display: flex;
+}
+.ti li{
+	margin-right: 5px;
+}
+.ti li a{
+	color: black;
+	text-decoration: none;
+}
+.ti li a:hover{
+	color:red;
+	text-decoration:underline;
+}
+#biaoti{
+	background-image: url(../img02/timg.jpg);
+	background-size: 1200px;
+	background-color: #000000;
+	background-repeat: no-repeat;
+	background-position: 0 -100px; 
+	height:220px;
+}
+#biaoti div:first-child{
+	padding-top: 20px;
+}
+#sou{
+	margin-left: 100px;
+	width: 350px;
+	height:40px;
+	border: 1px #DBDBDB solid;
+	float: left;
+	text-align: center;
+	margin-top: 50px;
+}
+#biaoti table{
+	border-spacing: 0;
+	color: #E9E6E6;
+	font-size:18px;
+	width: 1200px;	
+	background-color: black;
+}
+#biaoti table td{
+	width: 50px;
+	height: 70px;
+	text-align: center;
+	/*border: 1px solid white;*/
+}
+#biaoti table td:last-child{
+	width: 100px;
+}
+#biaoti table td div{
+	height:50px;
+}
+#biaoti table tr td a{
+	text-decoration: none;
+	color: #DBDBDB;
+}
+#biaoti table tr td a:hover{
+	color: orange;
+}
+
+
+/*主体 购物车*/
+.shop{
+	font-size: 15px;
+}
+.shop>div:nth-child(3),
+.shop>table:nth-child(6),
+.shop>p:nth-child(8),
+.shop>div:nth-child(10),
+.shop>div:nth-child(11),
+.shop>p:nth-child(12),
+.shop>p:nth-child(14),
+.shop>p:nth-child(15),
+.shop>p:nth-child(16),
+.shop>p:nth-child(17)
+{	
+	margin:15px auto;
+}
+.shop>p:nth-child(12){
+	margin-bottom: 30px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+}
+
+
+
+/*页脚*/
+.div0{
+	color:#dbdbdb;
+	width: 170px;	
+	margin-top: 30px;
+	float: left;
+	padding-left:50px;
+	border-right: 1px solid #dbdbdb;
+}
+.div0>img{
+	height: 30px;
+	width: 30px;
+	margin-left:-40px;
+	padding-top:-10px;
+	float: left;
+}
+.div0>img::after{
+	overflow:hidden
+}
+.div0::after{
+	overflow:hidden
+}
+.div0 a{
+	color:#dbdbdb;
+	text-decoration: none;
+}
+.div0 a:hover{
+	text-decoration:underline;
+}
+.div0>ul{
+	list-style: none;
+	height: 120px;
+}
+.div0 li{
+	margin-top: 10px;
+	font-size: 10px;
+}
+.div0>p{
+	margin-top: 3px;
+	font-size: 18px;
+}
+/*二维码*/
+.div00{
+	color:#dbdbdb;
+	width: 310px;	/*350*/
+	margin-top: 30px;
+	float: left;	
+}
+.div00::after{
+	overflow:hidden
+}
+.div00>div{
+	float: left;
+	margin-left: 50px;
+}
+.div00 img{
+	height: 100px;
+	width: 100px;
+}
+.div00 p{
+	margin-top: 10px;
+	width: 100px;
+	text-align: center;
+}
+/*版权*/
+.div000{
+	color:#dbdbdb;
+	text-align: center;
+	padding-top: 30px;
+	height:100px;
+}
+.div000>p{	
+	padding-top: 5px;
+	font-size: 10px;
+}
+.div000 a{
+	color:#dbdbdb;
+	text-decoration: none;
+}
+.div000 a:hover{
+	text-decoration:underline;
+}

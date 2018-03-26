@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace="dp.shop.UserOrder">
+
+<!-- 添加订单 -->
+<insert id="addOrder"  parameterType="dp.shop.Entity.UserOrder"  statementType="PREPARED" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+ 		insert into userorder(order_no,user_id,shipping_id,payment,payment_type,postage,status,create_time,update_time )
+		values 
+		(#{order_no},#{user_id},#{shipping_id},#{payment},#{payment_type},#{postage},#{status},now(),now())
+ </insert> 
+
+<!-- 查询全部
+		查询订单里的订单总数（用作分页查询） -->
+<select id="findAllUserOrder"  parameterType="int"  resultType="int">
+		select count(id) from userorder where user_id=#{user_id}
+</select>
+
+<!-- 分页查询
+1. 查询购物车 分页查询 -->
+<resultMap type="UserOrder"  id="UserOrder_Address_User" autoMapping="true">
+	<id column="id"  property="id"/>
+	<result column="user_id" property="user_id"/>
+	<association property="user" column="id" javaType="dp.shop.Entity.User" autoMapping="true">
+		<id column="id" property="id"/>
+	</association>
+	<association property="address" column="id" javaType="dp.shop.Entity.Address" autoMapping="true">
+		<id column="id" property="id"/>
+	</association>
+</resultMap>
+
+<select id="findUserOrder"  parameterType="java.util.Map"   resultMap="UserOrder_Address_User">
+		select 	o.user_id user_id,o.shipping_id shipping_id,u.username username,o.order_no order_no,a.receiver_name receiver_name,a.receiver_phone receiver_phone,
+					a.receiver_mobile receiver_mobile,a.receiver_province receiver_province,a.receiver_city receiver_city,a.receiver_district receiver_district,
+					a.receiver_address receiver_address,a.receiver_zip receiver_zip,o.payment payment,o.payment_type payment_type,
+					o.postage postage,o.status status,o.payment_time payment_time,o.send_time send_time,o.end_time end_time,o.close_time close_time,
+					o.create_time create_time,o.update_time update_time
+		from userorder o
+		left join user u 
+		on o.user_id=u.id 
+		
+		left join  address a
+		on o.shipping_id=a.id
+
+		where o.user_id=#{user_id}  limit #{offset},#{pageSize} 
+</select> 
+
+
+<!-- 根据订单号查询订单 -->
+
+<select id="findAllUserOrderByOrderNo"  parameterType="java.util.Map"  resultType="int" statementType="PREPARED">
+	select count(id) from userorder 
+	<where>
+		  user_id=#{user_id} 
+	</where>
+	<if test="order_no!=null"> 
+		and order_no Like #{order_no}
+	</if>
+</select>
+
+<select id="findUserOrderDetailByOrderNo" parameterType="java.util.Map"   resultMap="UserOrder_Address_User" statementType="PREPARED">
+
+		select 	o.user_id user_id,o.shipping_id shipping_id,u.username username,o.order_no order_no,a.receiver_name receiver_name,a.receiver_phone receiver_phone,
+					a.receiver_mobile receiver_mobile,a.receiver_province receiver_province,a.receiver_city receiver_city,a.receiver_district receiver_district,
+					a.receiver_address receiver_address,a.receiver_zip receiver_zip,o.payment payment,o.payment_type payment_type,
+					o.postage postage,o.status status,o.payment_time payment_time,o.send_time send_time,o.end_time end_time,o.close_time close_time,
+					o.create_time create_time,o.update_time update_time
+		from userorder o
+		left join user u 
+		on o.user_id=u.id 
+		
+		left join  address a
+		on o.shipping_id=a.id
+
+		where o.user_id=#{user_id}
+		 <if test="order_no!=null">
+			and order_no Like #{order_no}
+		</if>
+		  limit #{offset},#{pageSize} 
+</select>
+
+<update id="updateOrderByOrderNo"  parameterType="java.util.Map" statementType="PREPARED">
+	update  userorder 
+	<set>
+		status=#{status} , update_time=now()
+	</set>  
+	
+	<if test="status==10"><!-- CANCEL(10,"已取消") -->
+		,close_time=now()
+	</if>
+	
+	<if test="status==20"></if><!-- UNPAY(20,"未付款") -->
+	
+	<if test="status==30"><!-- PAY(30,"已付款") -->
+		,payment_time=now()
+	</if>
+	
+	<if test="status==40"><!-- SEND(40,"已发货") -->
+		,send_time=now()
+	</if>
+	
+	<if test="status==50"><!-- SUCCCESS(50,"交易成功") -->
+		,end_time=now()
+	</if>
+	
+	<if test="status==60"><!-- CLOSE(60,"交易关闭") -->
+		,close_time=now()
+	</if>
+	
+		where  order_no=#{order_no}
+
+
+</update>
+
+
+
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    
+    
+
+<configuration>
+
+<properties resource="jdbc.properties" />
+
+<typeAliases>
+<typeAlias type="dp.shop.Entity.User" alias="User"/>
+<typeAlias type="dp.shop.Entity.Product" alias="Product"/>
+<typeAlias type="dp.shop.Entity.Category" alias="Category"/>
+<typeAlias type="dp.shop.Entity.Address" alias="Address"/>
+<typeAlias type="dp.shop.Entity.Cart" alias="Cart"/>
+<typeAlias type="dp.shop.Entity.UserOrder" alias="UserOrder"/>
+<typeAlias type="dp.shop.Entity.UserOrderItem" alias="UserOrderItem"/>
+
+</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC">
+      </transactionManager>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${userName}"/>
+        <property name="password" value="${passWord}"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <mappers>
+	    <mapper resource="dp/shop/Config/addressMyBatis.xml"/>	    
+	    <mapper resource="dp/shop/Config/cartMyBatis.xml"/>	    
+	    <mapper resource="dp/shop/Config/userorderMyBatis.xml"/>
+	     <mapper resource="dp/shop/Config/userorderitemMyBatis.xml"/>
+	     <mapper resource="dp/shop/Config/userloginMyBatis.xml"/>		   		    
+  </mappers>
+
+</configuration>

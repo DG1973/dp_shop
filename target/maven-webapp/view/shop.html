@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>道聚城购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/shop.css"/>
+	</head>
+	<body style="background: #E9E6E6">
+		<!--标题-->
+		<div class="bian">
+			<ul class="ti" style="float: left;">
+				<li>游戏币交易</li>
+				<li>Q币充值</li>
+				<li>心悦游戏家</li>
+			</ul>
+			<ul class="ti" style="float:right;">
+				<li><a href="#">登录</a></li>
+				<li>丨</li>
+				<li><a href="admin.html">我的订单</a></li>
+				<li>丨</li>
+				<li><a href="admin01.html">个人中心</a></li>
+				<li>丨</li>
+				<li><a href="#">官方论坛</a></li>
+				<li>丨</li>
+				<li><a href="#">帮助中心</a></li>
+				<li>丨</li>
+				<li><a href="#">游戏导航</a></li>		
+			</ul>
+		</div>
+		
+		<div style="clear: both;"></div>
+		
+		<div id="biaoti" >
+			<div class="bian" style="height: 130px;">
+				<img src="img02/题目.png" style="float: left;" />
+				<!--搜索栏-->
+				<div id="sou">
+					<form>
+						<input type="text" colo placeholder="请输入搜索内容" style="height:40px;width: 300px;border: 0px;font-size: 15px;" />
+						<input type="submit" value="搜索" style="height: 40px;;width: 50px;margin-left: -5px;" />
+					</form>
+				</div>
+				<img src="img02/lol.png" height="100px" style="float:right"/>
+				<div style="clear: both;"></div>	
+			</div>
+			<!--导航-->
+			<table class="bian">
+					<td><a href="index.html"><div>首页</div></a></td>
+					<td><a href="liebiao.html"><div>商品列表</div></a></td>
+					<td><a href="#"><div>限时折扣</div></a></td>
+					<td><a href="#"><div>聚诚品</div></a></td>
+					<td><a href="#"><div>聚豆商城</div></a></td>
+					<td><a href="#"><div>周边商城</div></a></td>
+					<td><a href="admin01.html"><div>个人中心</div></a></td>				
+					<td><a href="shop.html">
+						<div style="color:orange;font-size: 20px;">
+							购物车
+						</div></a>
+					</td>
+			</table>
+		
+		</div>
+		<!--位置-->
+		<div style="height: 20px;margin: 10px auto;"class="bian">
+			<span style="font-size: 10px;">您现在的位置：英雄联盟  >购物车</span>
+		</div>
+		<!--主体-->
+		<div style="height:650px;background: white;padding: 15px;margin-bottom:30px;width: 1170px;" class="bian">
+			<form action="#" class="shop">
+				<!--1--><p style="font-weight:1000;">收货角色信息</p>
+				<!--2--><hr />
+				<!--3--><div>
+							<span style="font-size: 13px;">选择游戏角色：</span>
+							<select style="border: 1px solid #DBDBDB;height: 30px;width: 200px;">
+								<option value ="请选择大区">请选择大区</option>
+								<option value ="电信一区">艾欧尼亚 电信</option>
+								<option value ="电信二区">祖安 电信</option>
+								<option value ="网通一区">比尔吉沃特 网通</option>
+								<option value ="网通二区">德玛西亚 网通</option>
+							</select>
+							<select style="border: 1px solid #DBDBDB;height: 30px;width: 200px;">
+								<option value ="请选择大区">请选择角色</option>
+								<option value ="阿大">阿大</option>
+								<option value ="阿二">阿二</option>
+								<option value ="阿三">阿三</option>
+							</select>
+						</div>
+				<!--4--><p style="font-weight:1000;">商品信息</p>
+				<!--5--><hr />
+				<!--6--><table style="height:100px;background:#E9E6E6;width: 1170px;text-align: center;">
+							<tr>
+								<td>商品名称</td>
+								<td>类型</td>
+								<td>单价</td>
+								<td>期限</td>
+								<td>数量</td>
+								<td>优惠</td>
+								<td>小计</td>
+								<td>操作</td>
+							</tr>
+							<tr >
+								<td>商品名称</td>
+								<td>皮肤</td>
+								<td>129.00Q币</td>
+								<td>永久</td>
+								<td>
+									+
+									<input type="text" style="width: 30px;text-align: center;"value="1" />
+									-
+								</td>
+								<td>无优惠</td>
+								<td>129.00Q币</td>
+								<td>
+									<span>关注</span>
+									<span>删除</span>
+								</td>
+							</tr>
+						</table>
+				<!--7--><div style="height:50px;background:#E9E6E6;width: 1170px;">
+							<span style="float: left;margin-top: 15px;margin-left: 10px;">商品件数/最大件数(1/5) </span>
+							<span style="float: right;margin-top: 12px;">共1个商品 总价：<span style="color:#DE3A3A;font-size: 18px;font-weight: 1000;">129.00Q币</span></span>
+							<div style="clear: both;"></div>
+						</div>
+				<!--8--><p style="font-weight:1000;">您的优惠信息</p>
+				<!--9--><hr />
+				<!--10--><div>
+							<span style="font-size: 13px;">优惠券总量：</span>
+							<span style="font-size: 13px;color: red;">0 张</span>
+							<span style="font-size: 13px;">如何获得优惠券>></span>
+						</div>
+				<!--11--><div style="height:55px;width: 1170px;background:lightgoldenrodyellow;border: 1px  solid #DBDBDB;">
+							<span style="float: left;color: red;margin-top: 20px;">英雄联盟周边商城火热上线<a href="#">查看详情</a></span>
+							<a href="admin.html">
+								<input type="button" value="提交订单" onclick="alert('缴费成功')"style="background:#DE3A3A;height:100%;width:180px;float: right;font-size: 20px;font-weight: 1000;color: white;"/>
+							</a>
+							<span style="float: right;margin-top: 10px;">实付款:<span style="font-size: 25px;font-weight: 1000;color: #DE3A3A;"> 129.00 </span>Q币</span>
+							<div style="clear: both;"></div>
+						</div>
+				<!--12--><p style="font-weight:1000;">温馨提示</p>
+				<!--13--><hr />
+				<!--14--><p style="color: red;">LOL优惠券使用规则：[道具包]分类道具全场无法使用，每张优惠券的信息，请仔细核对以下信息：订单满减的金额是否符合要求、优惠券限定可用的道具范围。</p>
+				<!--15--><p>购买成功后系统会自动发货，如发货失败24小时内会自动补发。</p>
+				<!--16--><p>请确认游戏中是否存在购物车中的英雄或皮肤，如果存在，请勿重复购买。</p>
+				<!--17--><p>请重新登录游戏查收物品。</p>
+			</form>
+		</div>
+		<!--页脚-->
+		<div style="background:#3b3f4a;height:350px;border: 1px solid #3b3f4a;">
+	     	<div class="bian" style="height: 200px;">
+		     	<div class="div0">
+		     		<img src="img01/用户.png" />
+		     		<p>我是新手</p>
+		     		<ul>
+		     			<li><a href="#">什么是道聚城</a></li>
+		     			<li><a href="#">如何购买</a></li>
+		     			<li><a href="#">如何赠送</a></li>
+		     			<li><a href="#">如何获取聚豆</a></li>	
+		     		</ul>
+		     	</div>
+		     	<div class="div0">
+		     		<img src="img01/帮助.png" />
+		     		<p>个人中心</p>
+		     		<ul>
+		     			<li><a href="#">发货时间</a></li>
+		     			<li><a href="#">如何领取</a></li>
+		     			<li><a href="#">补发规则</a></li>
+		     			<li><a href="#">Vip价定义</a></li>	
+		     			<li><a href="#">道具状态定义</a></li>
+		     		</ul>
+		     	</div>
+		     	<div class="div0">
+		     		<img src="img01/支付方式.png" />
+		     		<p>支付方式</p>
+		     		<ul>
+		     			<li><a href="#">支付方式</a></li>
+		     			<li><a href="#">购物点支付</a></li>
+		     			<li><a href="#">如何充值</a></li>
+		     		</ul>
+		     	</div>
+		     	<div class="div0">
+		     		<img src="img01/qq.png" />
+		     		<p>腾讯在线服务</p>
+		     		<ul>
+		     			<li><a href="#">腾讯官方在线客服</a></li>	
+		     		</ul>
+		     	</div>
+		     	<div class="div00">
+		     		<div>
+		     			<img src="img01/掌上.png" />
+		     			<br />
+		     			<p>掌上道聚城</p>
+		     		</div>
+		     		<div>
+		     			<img src="img01/公众号.png" />
+		     			<br />
+		     			<p>掌上道聚城</p>
+		     		</div>
+		     	</div>
+	     	</div>	
+	     	<hr />
+	     	<div class="div000">
+	     		<p>
+	     			<a href="#">腾讯互动娱乐</a> | 
+	     			<a href="#">服务条款</a> | 
+	     			<a href="#">广告服务</a> |
+	     			<a href="#">腾讯游戏招聘</a> | 
+	     			<a href="#">腾讯游戏客服</a> | 
+	     			<a href="#">游戏地图</a> | 
+	     			<a href="#">游戏活动</a> | 
+	     			<a href="#">成长守护平台</a> | 
+	     			<a href="#">商务合作</a> | 
+	     			<a href="#">网站导航</a></p>
+	     		<p>COPYRIGHT © 1998 – 2018 TENCENT. ALL RIGHTS RESERVED.</p>
+	     		<p>腾讯公司 版权所有</p>
+	     	</div>     	
+     	</div>  
+    <div style="height: 20px;"></div>
+	</body>
+</html>

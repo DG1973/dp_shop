@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace="dp.shop.UserOrderItem">
+
+<!-- 添加批量  订单明细 -->
+<insert id="addOrderItem"  parameterType="list"  statementType="PREPARED" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+ 		insert into userorderitem(order_no,user_id,product_id,product_name,product_image,current_unit_price,quantity,total_price,create_time,update_time )
+		values 
+		<foreach collection="list" item="UserOrderItem" separator=",">
+			(#{UserOrderItem.order_no},#{UserOrderItem.user_id},#{UserOrderItem.product_id},#{UserOrderItem.product_name},#{UserOrderItem.product_image},
+			#{UserOrderItem.current_unit_price},#{UserOrderItem.quantity},#{UserOrderItem.total_price},now(),now())
+		</foreach>
+ </insert> 
+ 
+ 
+ 
+<!--  订单详细查询 -->
+ <resultMap type="UserOrder"  id="UserOrderItem_Address_User" autoMapping="true">
+	<id column="id"  property="id"/>
+	<result column="user_id" property="user_id"/>
+	<result column="order_no" property="order_no"/>
+	<!-- 一对一映射 property为实体类中定义的变量名  javaType实体类中对应的类型 column select查询出来的字段与数据库中哪个字段相关联（on的条件）
+	autoMapping="true" 自动映射 -->
+	<association property="user"  javaType="dp.shop.Entity.User" autoMapping="true"><!-- column="id" -->
+		<id column="user_id" property="id"/>	
+	</association>
+	
+	<association property="address"  javaType="dp.shop.Entity.Address" autoMapping="true"><!-- column="id" -->
+		<id column="shipping" property="id"/>
+	</association>
+	<!-- 一对多映射  property为实体类中定义的变量名  javaType实体类中对应的类型  column与数据库中哪个字段相关联（on的条件）
+	ofType 定义在实体类中的集合泛型 一对多映射必须查询“一”所在的主键 需用主键合并插入List -->
+	<collection property="userOrderItems" javaType="list" column="order_no" ofType="UserOrderItem" autoMapping="true">
+		<id column="order_id" property="id"/> 
+		<result column="uoi_create_time" property="create_time"/>
+		<result column="uoi_update_time" property="update_time"/>
+		<result column="uoi_order_no" property="order_no"/>
+	</collection>
+</resultMap>
+
+<select id="findUserOrderItem"  parameterType="java.util.Map"   resultMap="UserOrderItem_Address_User">
+		select	o.id id,o.user_id user_id , o.shipping_id shipping_id , o.order_no order_no , u.username username ,uoi.product_id product_id, uoi.product_name product_name , uoi.product_image product_image , 
+					uoi.current_unit_price current_unit_price , uoi.quantity quantity , uoi.total_price total_price ,a.receiver_name receiver_name , a.receiver_phone receiver_phone , 
+					a.receiver_mobile receiver_mobile , a.receiver_province receiver_province , a.receiver_city receiver_city , a.receiver_district receiver_district ,	a.receiver_address receiver_address , 
+					a.receiver_zip receiver_zip , o.payment payment , o.payment_type payment_type ,o.postage postage , o.status status , 
+					o.payment_time payment_time , o.send_time send_time , o.end_time end_time , o.close_time close_time ,
+					o.create_time create_time , o.update_time update_time,
+					uoi.create_time uoi_create_time , uoi.update_time uoi_update_time,uoi.order_no uoi_order_no
+		from userorder o
+		
+		left join user u 
+		on o.user_id=u.id 
+		
+		left join  address a
+		on o.shipping_id=a.id
+		
+		left join userorderitem uoi
+		on o.order_no=uoi.order_no
+		<where>
+			 o.user_id=#{user_id} and  o.order_no=#{order_no}
+		</where>
+	
+</select> 
+
+</mapper>

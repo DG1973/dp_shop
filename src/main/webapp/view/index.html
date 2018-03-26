@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>道聚城首页</title>
+		<link rel="stylesheet" href="css/CSS.css" />
+		<link rel="stylesheet" type="text/css" href="css/ft-carousel.css"/>
+		<style>
+			.example {width: 624px;height: 336px;font-size: 40px;text-align: center;margin: 0px auto;background-color: #464576;}
+			.carousel-item{line-height: 336px;color: #fff;font-family:  Arial Black}
+		</style>
+	</head>
+	<body style="background-color:#f3f4f6;" >
+	<!--题头-->
+	<div style="background: white;">
+		<div class="bian">
+			<ul class="ti" style="float: left;">
+				<li>游戏币交易</li>
+				<li>Q币充值</li>
+				<li>心悦游戏家</li>
+			</ul>
+			<ul class="ti" style="float:right;">
+				<li><a href="#">登录</a></li>
+				<li>丨</li>
+				<li><a href="admin.html">我的订单</a></li>
+				<li>丨</li>
+				<li><a href="admin01.html">个人中心</a></li>
+				<li>丨</li>
+				<li><a href="#">官方论坛</a></li>
+				<li>丨</li>
+				<li><a href="#">帮助中心</a></li>
+				<li>丨</li>
+				<li><a href="#">游戏导航</a></li>		
+			</ul>
+			<div style="clear:both;"></div>
+			
+			<div class="fu">
+				<img src="img/题目.JPG"width="350px" />
+			</div>
+		   	<div class="fu" style="margin-top: 40px;margin-left: 60px;border:2px solid #f84a4b;background-color:#f84a4b;">
+				<form>
+		   			<select style="height: 30px;">
+		   				<option>请选择游戏</option>
+		   				<option>英雄联盟</option>
+		   				<option>穿越火线</option>
+		   				<option>斗战神</option>
+		   				<option>剑灵</option>
+		   			</select>
+		   			<input type="text" style="height:30px;width: 300px;border: 0px;font-size: 18px;" />
+		   			<input type="submit" value="搜索" style="height: 30px;background-color:#f84a4b;width: 50px;" />
+				</form>
+			</div>
+			<div style="float: right;">
+				<img src="img/二维码.JPG" />
+			</div>
+		   	<div style="clear: both;"></div>
+		 </div>
+	</div>
+		<!--引导栏-->
+	<div style="background-color: #3b3f4a;height: 50px;">
+		<div class="bian">
+		 	<div style="height: 50px;display: inline-block;"class="yindao";>
+		 		<p style="margin-top:10px;">所有游戏分类</p>
+		 	</div>
+		 	<div class="dao">
+		 		<a href="index.html"><div>首页</div></a>
+		     	<a href="liebiao.html"><div>商品列表</div></a>
+		     	<a href="#"><div>聚诚品</div></a>
+		     	<a href="#"><div>聚豆商城</div></a>
+		     	<a href="admin01.html"><div>个人中心</div></a>
+		 	</div>
+		 	<a href="shop.html">
+			 	<div id="gouwuche">
+			     	<span>购物车</span>
+			     	<span>丨</span>
+			     	<span>0</span>
+			 	</div>
+		 	</a>
+		 </div>
+	 	<div style="clear: both;"></div>
+	 </div>
+	 
+	<!--轮播框体-->
+	<div class="bian">
+	 	<!--引导-->
+	 	<div class="lol" style="position:relative;">
+	 		<div>
+	 			热门游戏
+	 			<div id="la" >
+	 			<ul>
+	 				<li>英雄联盟</li>
+	 				<li>穿越火线</li>
+	 				<li>剑灵</li>
+	 				<li>斗战神</li>
+	 			</ul>
+	 		</div>
+	 		</div>
+	 		
+	 		<div>英雄联盟</div>
+	 		<div>穿越火线</div>
+	 		<div>剑灵</div>
+	 		<div>斗战神</div>
+	 		
+	 	</div>
+	 	
+	 	<!--轮播-->
+	   <div class="example"style="height: 300px;float: left;">
+			<div class="ft-carousel" id="carousel_1">
+				<ul class="carousel-inner">
+					<li class="carousel-item"><img src="img/a1.jpg" /></li>
+					<li class="carousel-item"><img src="img/a2.jpg" /></li>
+					<li class="carousel-item"><img src="img/a3.jpg" /></li>
+					<li class="carousel-item"><img src="img/a4.jpg" /></li>
+					<li class="carousel-item"><img src="img/a5.jpg" /></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ft-carousel.min.js"></script>
+		<script type="text/javascript">
+			$("#carousel_1").FtCarousel();
+		
+			$("#carousel_2").FtCarousel({
+				index: 1,
+				auto: false
+			});
+		
+			$("#carousel_3").FtCarousel({
+				index: 0,
+				auto: true,
+				time: 3000,
+				indicators: false,
+				buttons: true
+			});
+		</script>	
+		<!--个人信息-->	
+		<div style="background-color: red;width: 220px;float: right;height: 300px;">
+	        页面加载失败
+		</div>
+		<div style="clear: both;"></div>
+	</div>  
+	
+  
+	<div id="zt">
+	  	<!--精彩活动-->
+		<div style="padding: 1px;background: white;" class="bian">
+		   	 <h3>精彩活动</h3>
+		   	 <div style="text-align: center;" id="jingcai">
+		   		<img src="img01/20171213141430_423533.jpg">
+		   		<img src="img01/20171220100019_531363.jpg"> 
+		   		<img src="img01/20171226151134_833336.jpg">
+		   		<br />
+		   		<img src="img01/20171228160925_313675.jpg">
+		   		<img src="img01/20180104094528_187097.jpg">
+		   		<img src="img01/20180104180603_340741.jpg">
+		   	 </div>
+		</div>	
+	   	<!--英雄联盟-->
+	   	<div class="bian">
+	   		<!--标题-->
+	   	 	<h3>英雄联盟</h3>
+	   	 	<!--左侧图-->
+	     	<div class="div01">
+	   			<img src="img/b2.jpg" />
+	   	 	</div>
+	   	 	<!--中间内容-->
+	   	 	<div class="div_01">
+	   	 		<div class="div_01_1">
+	   	 			<!--上框一-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size: 16px;margin-top: 10px;font-weight: 600;">张辽 文远</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">189.05元</span></p>
+		   	 				<p>Q比价：199.00 QB</p>
+		   	 				<img src="img/L1.jpg" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框一-->
+	   	 			
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>惊悚派对 费德提克</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">284.05元</span></p>
+		   	 				<p>Q比价：299.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/L5.jpg" /></a>
+	   	 			</div>
+	   	 			
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框二-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">虎痴之拳 蔚</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">189.05元</span></p>
+		   	 				<p>Q比价：199.00 QB</p>
+		   	 				<img src="img/L2.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框二-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>司马懿 仲达</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">189.05元</span></p>
+		   	 				<p>Q比价：199.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/L6.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框三-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">紫金罗刹 莫甘娜</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">189.05元</span></p>
+		   	 				<p>Q比价：199.00 QB</p>
+		   	 				<img src="img/L3.jpg" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框三-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>神龙之翼 库奇</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">141.55元</span></p>
+		   	 				<p>Q比价：149.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/L6.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框四-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">玉净夜叉 凯特琳</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">189.05元</span></p>
+		   	 				<p>Q比价：199.00 QB</p>
+		   	 				<img src="img/L4.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框四-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>安妮 梦游仙境</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">284.05元</span></p>
+		   	 				<p>Q比价：299.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/L8.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 
+	   	 	
+	   	 	</div>
+	   	 	<!--右侧内容-->
+	   	 	<div class="you">
+	   	 		<!--排名第一-->
+	   	 		<div>
+	   	 			<div style="height: 65px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T1.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">未来战士 凯特琳</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">99.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/P1.jpg" height="50px" width="50px" style="float: right;margin-right: 10px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第二-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T2.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">张辽 文远</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">199.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/L1.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第三-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T3.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">源计划：雷</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">79.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/P3.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第四-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T4.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">源计划：联合</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">99.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/P4.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第五-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T5.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">灌篮高手 德莱..</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">99.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/P5.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 	</div>	
+	   	</div>
+	   	<div style="clear:both ;"></div>
+	   	<!--穿越火线-->
+	   	<div class="bian">
+	   		<!--标题-->
+	   	 	<h3>穿越火线</h3>
+	   	 	<!--左侧图-->
+	     	<div class="div01">
+	   			<img src="img/b1.jpg" />
+	   	 	</div>
+	   	 	<!--中间内容-->
+	   	 	<div class="div_01">
+	   	 		<div class="div_01_1">
+	   	 			<!--上框一-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">6号背包</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">83.60元</span></p>
+		   	 				<p>Q比价：88.00 QB</p>
+		   	 				<img src="img/C1.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框一-->
+	   	 			
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>修改昵称</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">14.25元</span></p>
+		   	 				<p>Q比价：15.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/C5.jpg" /></a>
+	   	 			</div>
+	   	 			
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框二-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">英雄角色-葵</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">387.60元</span></p>
+		   	 				<p>Q比价：408.00 QB</p>
+		   	 				<img src="img/C2.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框二-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>沙鹰-天神</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">387.60元</span></p>
+		   	 				<p>Q比价：408.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/C6.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框三-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">金蛇戒</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">28.50元</span></p>
+		   	 				<p>Q比价：30.00 QB</p>
+		   	 				<img src="img/C3.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框三-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>威锋</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">23.75元</span></p>
+		   	 				<p>Q比价：25.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/C7.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框四-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">手雷包</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">27.07元</span></p>
+		   	 				<p>Q比价：28.50 QB</p>
+		   	 				<img src="img/C8.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框四-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>清楚中涂退场记录</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">27.07元</span></p>
+		   	 				<p>Q比价：5.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/C4.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 
+	   	 	
+	   	 	</div>
+	   	 	<!--右侧内容-->
+	   	 	<div class="you">
+	   	 		<!--排名第一-->
+	   	 		<div>
+	   	 			<div style="height: 65px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T1.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">英雄角色-葵</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">408.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/C2.jpg" height="50px" width="50px" style="float: right;margin-right: 10px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第二-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T2.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">威锋</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">25.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/C7.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第三-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T3.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">沙鹰-天神</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">408.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/C6.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第四-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T4.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">清除中途退场记录</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">5.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/C4.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第五-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T5.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">6号背包</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">88.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/C1.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 	</div>	
+	   	</div>
+	   	<div style="clear:both ;"></div>
+	   	<!--剑灵-->
+	   	<div class="bian">
+	   		<!--标题-->
+	   	 	<h3>剑灵</h3>
+	   	 	<!--左侧图-->
+	     	<div class="div01">
+	   			<img src="img/b3.jpg" />
+	   	 	</div>
+	   	 	<!--中间内容-->
+	   	 	<div class="div_01">
+	   	 		<div class="div_01_1">
+	   	 			<!--上框一-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">璨夜月华服装包</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">28.35元</span></p>
+		   	 				<p>Q比价：29.88 QB</p>
+		   	 				<img src="img/jl1.png" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框一-->
+	   	 			
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>四周年：旋律豪华礼</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">369.43元</span></p>
+		   	 				<p>Q比价：388.88 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/jl5.png" /></a>
+	   	 			</div>
+	   	 			
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框二-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">耀眼的神兽灵箱子</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">22.80元</span></p>
+		   	 				<p>Q比价：24.00 QB</p>
+		   	 				<img src="img/jl2.png" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框二-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>旋律时装礼包</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">179.43元</span></p>
+		   	 				<p>Q比价：408.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/jl6.png" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框三-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">神兽灵箱子</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">5.70元</span></p>
+		   	 				<p>Q比价：30.00 QB</p>
+		   	 				<img src="img/jl3.png" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框三-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>朝霞之枪</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">198.43元</span></p>
+		   	 				<p>Q比价：208.88 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/jl7.png" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框四-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">音仔幻影石</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">179.43元</span></p>
+		   	 				<p>Q比价：188.88 QB</p>
+		   	 				<img src="img/jl4.png" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框四-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>天乾武魂神物</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">11.87元</span></p>
+		   	 				<p>Q比价：12.50 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/jl8.png" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 
+	   	 	
+	   	 	</div>
+	   	 	<!--右侧内容-->
+	   	 	<div class="you">
+	   	 		<!--排名第一-->
+	   	 		<div>
+	   	 			<div style="height: 65px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T1.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">天乾武魂神物</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">12.50 QB</span>
+		   	 			</div>
+	   	 				<img src="img/jl8.png" height="50px" width="50px" style="float: right;margin-right: 10px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第二-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T2.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">朝霞之枪</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">208.88 QB</span>
+		   	 			</div>
+	   	 				<img src="img/jl7.png" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第三-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T3.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">旋律时装礼包</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">188.88 QB</span>
+		   	 			</div>
+	   	 				<img src="img/jl6.png" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第四-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T4.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">神兽灵箱子</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">6.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/jl3.png" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第五-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T5.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">音仔幻影石</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">188.88 QB</span>
+		   	 			</div>
+	   	 				<img src="img/jl4.png" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 	</div>	
+	   	</div>
+	   	<div style="clear:both ;"></div>
+	   	<!--斗战神-->
+	   	<div class="bian">
+	   		<!--标题-->
+	   	 	<h3>斗战神</h3>
+	   	 	<!--左侧图-->
+	     	<div class="div01">
+	   			<img src="img/b4.jpg" />
+	   	 	</div>
+	   	 	<!--中间内容-->
+	   	 	<div class="div_01">
+	   	 		<div class="div_01_1">
+	   	 			<!--上框一-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">精致的小铜锤</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">1.78元</span></p>
+		   	 				<p>Q比价：1.88 QB</p>
+		   	 				<img src="img/dzs1.jpg" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框一-->
+	   	 			
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>传音灵诀</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">0.95元</span></p>
+		   	 				<p>Q比价：1.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/dzs5.jpg" /></a>
+	   	 			</div>
+	   	 			
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框二-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size: 16px;margin-top: 10px;font-weight: 1000;">VIP月卡</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">17.86元</span></p>
+		   	 				<p>Q比价：18.80 QB</p>
+		   	 				<img src="img/dzs2.jpg" />
+	   	 				</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框二-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>太上五星诀</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">3.80元</span></p>
+		   	 				<p>Q比价：4.00 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/dzs6.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框三-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">VIP年卡</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">178.60元</span></p>
+		   	 				<p>Q比价：188.00 QB</p>
+		   	 				<img src="img/dzs3.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框三-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>活动达人契约</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">17.86元</span></p>
+		   	 				<p>Q比价：18.80 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/dzs7.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 		
+	   	 		<div class="div_01_1">
+	   	 			<!--上框四-->
+	   	 			<a href="#">
+	   	 			<div class="div_01_shang">
+	   	 				<div>
+		   	 				<p style="font-size:16px;margin-top: 10px;font-weight: 1000;">修尚令</p>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">0.33元</span></p>
+		   	 				<p>Q比价：0.35 QB</p>
+		   	 				<img src="img/dzs4.jpg" />
+		   	 			</div>
+	   	 			</div>
+	   	 			</a>
+	   	 			<!--下框四-->
+	   	 			<div class="div_01_xia">
+	   	 				<div>
+	   	 					<a href="#"><span>太乙符箓</span></a>
+		   	 				<p style="color: red;">微信价：<span style="font-weight: 1000">8.36元</span></p>
+		   	 				<p>Q比价：8.80 QB</p>	
+	   	 				</div>
+	   	 				<a href="#"><img src="img/dzs8.jpg" /></a>
+	   	 			</div>
+	   	 		</div>
+	   	 
+	   	 	
+	   	 	</div>
+	   	 	<!--右侧内容-->
+	   	 	<div class="you">
+	   	 		<!--排名第一-->
+	   	 		<div>
+	   	 			<div style="height: 65px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T1.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">VIP年卡</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">188.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/dzs3.jpg" height="50px" width="50px" style="float: right;margin-right: 10px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第二-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T2.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">VIP月卡</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">18.80 QB</span>
+		   	 			</div>
+	   	 				<img src="img/dzs2.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第三-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T3.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">活动达人契约</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">18.80 QB</span>
+		   	 			</div>
+	   	 				<img src="img/dzs7.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第四-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T4.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">太上五星诀</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">4.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/dzs6.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 		<!--排名第五-->
+	   	 		<div>
+	   	 			<div style="height: 45px;border-bottom: 1px solid #e9e6e6;padding-top: 10px;">
+	   	 				<img src="img/T5.JPG" width="23px" style="float: left;" />
+	   	 				<div style="float: left;margin-left: 10px;">
+		   	 				<a style="font-size: 5px;" href="#">传音灵诀</a>
+		   	 				<br />
+		   	 				<span style="font-size: 5px;color: red;font-weight: 1000;">1.00 QB</span>
+		   	 			</div>
+	   	 				<img src="img/dzs5.jpg" height="30px" width="30px" style="float: right;margin-right:20px;"/>
+	   	 			</div>
+	   	 		</div>
+	   	 	</div>	
+	   	</div>
+	   	<div style="clear:both ;"></div>
+	 </div>
+     
+     <!--下面三图-->
+     <div id="xiatu" class="bian">
+     	<div>
+     		<img src="img/xiatu1.jpg" />
+     	</div>
+     	<div>
+     		<img src="img/xiatu2.jpg" />
+     	</div>
+     	<div>
+     		<img src="img/xiatu3.jpg" />
+     	</div>
+     	<div style="clear: both;"></div>
+     </div>
+     
+     <!--页脚-->
+     <div style="background:#3b3f4a;height:350px;">
+     	<div class="bian" style="height: 200px;">
+	     	<div class="div02">
+	     		<img src="img01/用户.png" />
+	     		<p>我是新手</p>
+	     		<ul>
+	     			<li><a href="#">什么是道聚城</a></li>
+	     			<li><a href="#">如何购买</a></li>
+	     			<li><a href="#">如何赠送</a></li>
+	     			<li><a href="#">如何获取聚豆</a></li>	
+	     		</ul>
+	     	</div>
+	     	<div class="div02">
+	     		<img src="img01/帮助.png" />
+	     		<p>个人中心</p>
+	     		<ul>
+	     			<li><a href="#">发货时间</a></li>
+	     			<li><a href="#">如何领取</a></li>
+	     			<li><a href="#">补发规则</a></li>
+	     			<li><a href="#">Vip价定义</a></li>	
+	     			<li><a href="#">道具状态定义</a></li>
+	     		</ul>
+	     	</div>
+	     	<div class="div02">
+	     		<img src="img01/支付方式.png" />
+	     		<p>支付方式</p>
+	     		<ul>
+	     			<li><a href="#">支付方式</a></li>
+	     			<li><a href="#">购物点支付</a></li>
+	     			<li><a href="#">如何充值</a></li>
+	     		</ul>
+	     	</div>
+	     	<div class="div02">
+	     		<img src="img01/qq.png" />
+	     		<p>腾讯在线服务</p>
+	     		<ul>
+	     			<li><a href="#">腾讯官方在线客服</a></li>
+	     				
+	     		</ul>
+	     	</div>
+	     	<div class="div03">
+	     		<div>
+	     			<img src="img01/掌上.png" />
+	     			<br />
+	     			<p>掌上道聚城</p>
+	     		</div>
+	     		<div>
+	     			<img src="img01/公众号.png" />
+	     			<br />
+	     			<p>掌上道聚城</p>
+	     		</div>
+	     	</div>
+     	</div>	
+     	<hr />
+     	<div class="div04">
+     		<p>
+     			<a href="#">腾讯互动娱乐</a> | 
+     			<a href="#">服务条款</a> | 
+     			<a href="#">广告服务</a> |
+     			<a href="#">腾讯游戏招聘</a> | 
+     			<a href="#">腾讯游戏客服</a> | 
+     			<a href="#">游戏地图</a> | 
+     			<a href="#">游戏活动</a> | 
+     			<a href="#">成长守护平台</a> | 
+     			<a href="#">商务合作</a> | 
+     			<a href="#">网站导航</a></p>
+     		<p>COPYRIGHT © 1998 – 2018 TENCENT. ALL RIGHTS RESERVED.</p>
+     		<p>腾讯公司 版权所有</p>
+     	</div>     	
+     </div>  
+     <div style="height: 20px;"></div>
+	</body>
+</html>

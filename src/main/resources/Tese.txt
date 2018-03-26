@@ -1,0 +1,32 @@
+http://localhost:8080/dp_shop/Cart_Servlet?operation=1&pageNo=1&pageSize=2
+分页查询
+
+http://localhost:8080/dp_shop/Cart_Servlet?operation=2&product_id=1&quantity=10&checked=1  添加和修改
+添加和修改可以进行判断，购物车中有就是直接修改数量，购物车中没有则是添加商品
+
+http://localhost:8080/dp_shop/Cart_Servlet?operation=3&checked=1&&product_id=-1
+修改选中与未选中：product_id为-1时是选择全部，其他正数为商品id，判断是否选中：checked为1选中，为0不选中
+
+http://localhost:8080/dp_shop/Cart_Servlet?operation=4&product_id=1   
+删除
+
+
+
+
+订单
+查询订单明细
+http://localhost:8080/dp_shop/view/Order_Servlet?operation=1&order_no=1520491598092
+
+根据订单编号分页查询（如果order_no=null则是全查）
+http://localhost:8080/dp_shop/view/Order_Servlet?operation=2&pageNo=1&pageSize=2&order_no=152
+
+创建订单
+http://localhost:8080/dp_shop/view/Order_Servlet?operation=3&shipping_id=1
+
+更新订单
+CANCEL(10,"已取消"),	UNPAY(20,"未付款"),	PAY(30,"已付款"),	SEND(40,"已发货"),	SUCCCESS(50,"交易成功"),	CLOSE(60,"交易关闭");
+http://localhost:8080/dp_shop/view/Order_Servlet?operation=4&order_no=1520491598092&status=20
+
+
+
+
