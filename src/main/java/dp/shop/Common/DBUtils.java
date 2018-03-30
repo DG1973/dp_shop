@@ -19,7 +19,7 @@ public class DBUtils {
 	//一、加载驱动
 		try {
 			ps.load(is);
-			Class.forName(ps.getProperty("driver"));
+			Class.forName(ps.getProperty("jdbc.driver"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -30,7 +30,7 @@ public class DBUtils {
 	//二、准备、连接url
 	public static Connection getConnection() throws SQLException {
 		Connection conn=null;
-		conn=DriverManager.getConnection(ps.getProperty("url"), ps.getProperty("userName"), ps.getProperty("passWord"));
+		conn=DriverManager.getConnection(ps.getProperty("jdbc.url"), ps.getProperty("jdbc.userName"), ps.getProperty("jdbc.passWord"));
 		return conn;	
 	}
 	//七、关闭连接

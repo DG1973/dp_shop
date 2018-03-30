@@ -9,41 +9,24 @@ import dp.shop.Common.MybatisUtils;
 import dp.shop.Dao.AddressMyBatis_Dao_Interface;
 import dp.shop.Entity.Address;
 import dp.shop.Entity.PageModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository("AddressMyBatisDao")
 public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
-	private static AddressMyBatis_Dao_Interface danli=null;
-	private AddressMybatis_Dao() {}
-	public synchronized static AddressMyBatis_Dao_Interface getAddressDao() {
-		if(danli==null) {
-			return danli=new AddressMybatis_Dao();
-		}
-		return danli;
+	@Autowired
+	SqlSessionFactory factory;
+
+	public void setFactory(SqlSessionFactory factory) {
+		this.factory = factory;
 	}
-	
-	
-	
-	
+
 	@Override
 	public int addAddress(Integer userid, Address address) {
 		// TODO Auto-generated method stub
-/*		//1，读取配置文件
-		String config="dp/shop/Config/MyBatisConfig.xml";
-		Reader reader=null;
-		try {
-			reader=Resources.getResourceAsReader(config);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//2，生成SqlSessionFactory    为SqlSession的工厂，用于建立与数据库的会话。
-		SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);
-		SqlSession session=sqlSessionFactory.openSession(false);*/
-		
-		
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
-		//3，建立SqlSession 用于执行sql语句
+		//??SqlSession ???????sql???
 		Map<String,Object> map=new HashMap<String,Object>();
 		
 		map.put("id",address.getId());
@@ -56,12 +39,12 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 		map.put("receiver_address",address.getReceiver_address());
 		map.put("receiver_zip",address.getReceiver_zip());
 		
-		//4，调用MyBatis提供的api    //5，查询MAP配置
+		//4??????MyBatis????api    //5?????MAP????
 		int num=session.insert("dp.shop.Address.addAddress", map);
 		
-		//6，返回结果
+		//6????????
 		session.commit();
-		//7，关闭SqlSession
+		//7?????SqlSession
 		session.close();
 
 		return num;
@@ -70,8 +53,7 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 	@Override
 	public int deletAddressByUserid(Integer userid, Integer id) {
 		// TODO Auto-generated method stub
-		
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		
 		Map<String,Object> map=new HashMap<String,Object>();
@@ -90,7 +72,6 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 	@Override
 	public int updataUserAddressByUserid(Integer id,Integer userid, Address address) {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		
 		address.setId(id);
@@ -108,13 +89,12 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 	public PageModel<Address> findUserAddress(Integer pageNo, Integer pageSize, Integer userid) {
 		// TODO Auto-generated method stub
 		PageModel<Address> pageModel=new PageModel<Address>();
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		
 		int num=session.selectOne("dp.shop.Address.findAddress", userid);
 		if(num!=0) {
 			int totalCount=num;
-			//计算多少页
+			//????????
 			int totalpage=totalCount%pageSize==0?totalCount/pageSize:(totalCount/pageSize+1);
 			pageModel.setTotalPage(totalpage);
 		}
@@ -133,10 +113,9 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 		return pageModel;
 
 	}
-	//查询总记录数	
+	//?????????	
 	public int findAddress(Integer userid) {
-		
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		
 		int num=session.selectOne("dp.shop.Address.findAddress", userid);
@@ -148,7 +127,6 @@ public class AddressMybatis_Dao implements AddressMyBatis_Dao_Interface{
 	public Address findAddressByIdAndUser_id(Integer id, Integer user_id) {
 		// TODO Auto-generated method stub
 		Map<String,Integer> map=new HashMap<String,Integer>();
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		
 		

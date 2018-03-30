@@ -12,7 +12,9 @@ import dp.shop.Dao.Shop_Dao_Interface;
 import dp.shop.Entity.Category;
 import dp.shop.Entity.PageModel;
 import dp.shop.Entity.Product;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class Shop_Dao_Imp implements Shop_Dao_Interface {
 	private static  Shop_Dao_Interface daoDanLi=null;
 	public Shop_Dao_Imp() {}

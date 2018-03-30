@@ -13,9 +13,18 @@ import dp.shop.Entity.Cart;
 import dp.shop.Entity.PageModel;
 import dp.shop.Entity.VO.CartVO;
 import dp.shop.Service.Cart_Service_Interface_HTML;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Cart_Servic_Impl_HTML implements Cart_Service_Interface_HTML{
-	CartMyBatis_Dao_Interface Cart_Dao=new CartMyBatis_Dao_impl();
+	@Autowired
+	CartMyBatis_Dao_Interface Cart_Dao;
+
+	public void setCart_Dao(CartMyBatis_Dao_Interface cart_Dao) {
+		Cart_Dao = cart_Dao;
+	}
+
 	@Override
 	
 	public String findUserCart(HttpServletRequest request,Integer userid) {

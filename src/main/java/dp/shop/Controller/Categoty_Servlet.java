@@ -11,6 +11,8 @@ import dp.shop.Entity.Category;
 import dp.shop.Entity.PageModel;
 import dp.shop.Service.Shop_Service_Interface;
 import dp.shop.Service.Imp.Shop_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Categoty_Servlet
@@ -32,7 +34,9 @@ public class Categoty_Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pageNo=request.getParameter("pageNo");
-		Shop_Service_Interface shop=Shop_Service_Imp.getShopService();
+		//Shop_Service_Interface shop=Shop_Service_Imp.getShopService();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Shop_Service_Interface shop=webApplicationContext.getBean(Shop_Service_Imp.class);
 	    try {
 	    	 PageModel<Category>  pageModel=shop.findCategoryByPage(Integer.parseInt(pageNo),5);
 	         request.setAttribute("pageModel", pageModel);

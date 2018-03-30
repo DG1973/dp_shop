@@ -14,6 +14,8 @@ import dp.shop.Entity.Category;
 import dp.shop.Entity.Product;
 import dp.shop.Service.Shop_Service_Interface;
 import dp.shop.Service.Imp.Shop_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Product_Add
@@ -37,7 +39,9 @@ public class Product_Insert extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		//实例化
-		Shop_Service_Interface shop= Shop_Service_Imp.getShopService();
+		//Shop_Service_Interface shop= Shop_Service_Imp.getShopService();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Shop_Service_Interface shop=webApplicationContext.getBean(Shop_Service_Imp.class);
 		List<Category> category=shop.findAllCategory();
 		//获取Category的list集合
 		request.setAttribute("category", category);
@@ -68,7 +72,9 @@ public class Product_Insert extends HttpServlet {
 
 		try {
 			product=new Product(1,Integer.parseInt(category_id),name, subtitle,main_image,sub_images,detail,new BigDecimal(price), Integer.parseInt(stock),Integer.parseInt(status),new Date(),new Date());
-			shops_product =Shop_Service_Imp.getShopService();
+			//shops_product =Shop_Service_Imp.getShopService();
+			WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+			shops_product=webApplicationContext.getBean(Shop_Service_Imp.class);
 			
 		}catch(NumberFormatException e) {
 			doGet(request, response);

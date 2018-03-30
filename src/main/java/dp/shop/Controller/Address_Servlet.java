@@ -10,6 +10,8 @@ import dp.shop.Entity.Address;
 import dp.shop.Entity.PageModel;
 import dp.shop.Service.Address_Service_Interface;
 import dp.shop.Service.Imp.Address_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Address_Servlet
@@ -37,8 +39,11 @@ public class Address_Servlet extends HttpServlet {
 		
 		String pageNo=request.getParameter("pageNo");
 		String userid=request.getParameter("userid");
-		
-		Address_Service_Interface shop=Address_Service_Imp.getAddressService();
+
+		//Address_Service_Interface shop=Address_Service_Imp.getAddressService();
+		//从spring框架中获取实例
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Address_Service_Interface shop=webApplicationContext.getBean(Address_Service_Imp.class);
 	    try {
 	    	 PageModel<Address>  pageModel=shop.findUserAddress((Integer.parseInt(pageNo)), 2, Integer.parseInt(userid));
 	    	 //System.out.println(pageModel.getData());

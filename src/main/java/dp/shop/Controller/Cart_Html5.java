@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import dp.shop.Entity.User;
 import dp.shop.Service.Cart_Service_Interface_HTML;
 import dp.shop.Service.Imp.Cart_Servic_Impl_HTML;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Cart_Html5
@@ -48,7 +50,10 @@ public class Cart_Html5 extends HttpServlet {
 		String operation=request.getParameter("operation");
 		//调用Service层方法
 		
-		Cart_Service_Interface_HTML Cart_Service=new Cart_Servic_Impl_HTML();
+		//Cart_Service_Interface_HTML Cart_Service=new Cart_Servic_Impl_HTML();
+		//从spring框架中获取实例
+		WebApplicationContext webApplicationContext=WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Cart_Service_Interface_HTML Cart_Service= webApplicationContext.getBean(Cart_Servic_Impl_HTML.class);
 
 		if(object!=null && object instanceof User) {
 			user=(User)object;

@@ -21,15 +21,27 @@ import dp.shop.Entity.UserOrderItem;
 import dp.shop.Entity.VO.OrderVO;
 import dp.shop.Exception.orderException;
 import dp.shop.Service.Order_Service_Interface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  * ¶©µ¥---ÒµÎñÂß¼­²ã
  * 
  * */
+@Service
 public class Order_Service_Impl implements Order_Service_Interface {
-	private CartMyBatis_Dao_Interface CartDao=new CartMyBatis_Dao_impl();
-	private UserOrderMyBatis_Dao_Interface UserOrderDao=new UserOrderMyBatis_Dao_Impl();
-	private Shop_Dao_Interface product=Shop_Dao_Imp.getShopDao();
-	private UserOrderItemMyBatis_Dao_Interface UserOrderItemDao=new UserOrderItemMyBatis_Dao_Impl();
+	@Autowired
+	private CartMyBatis_Dao_Interface CartDao;
+	//private CartMyBatis_Dao_Interface CartDao=new CartMyBatis_Dao_impl();
+	@Autowired
+	private UserOrderMyBatis_Dao_Interface UserOrderDao;
+	//private UserOrderMyBatis_Dao_Interface UserOrderDao=new UserOrderMyBatis_Dao_Impl();
+	@Autowired
+	private Shop_Dao_Interface product;
+	//private Shop_Dao_Interface product=Shop_Dao_Imp.getShopDao();
+	@Autowired
+	private UserOrderItemMyBatis_Dao_Interface UserOrderItemDao;
+	//private UserOrderItemMyBatis_Dao_Interface UserOrderItemDao=new UserOrderItemMyBatis_Dao_Impl();
 	@Override
 	
 	/**

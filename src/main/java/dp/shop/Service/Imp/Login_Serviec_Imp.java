@@ -5,14 +5,21 @@ import dp.shop.Dao.Imp.Login_Dao_Imp;
 import dp.shop.Dao.Imp.UserLoginMyBatis_Dao_Impl;
 import dp.shop.Entity.User;
 import dp.shop.Service.Userlogin_Service_Inteface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Login_Serviec_Imp implements Userlogin_Service_Inteface {
-	
-	Userlogin_Dao_Interface logindao=new UserLoginMyBatis_Dao_Impl();
-	
+	@Autowired
+	Userlogin_Dao_Interface logindao;
+
+	public void setLogindao(Userlogin_Dao_Interface logindao) {
+		this.logindao = logindao;
+	}
+	@Override
 	public User login(String username, String password) {
 		int  num =logindao.checkUserName(username);
-		//检测用户名是否存在 
+		//检测用户名是否存在
 		if(num>0) {
 			//匹配账号密码
 			return logindao.findUserByUsernameAndPassword(username, password);

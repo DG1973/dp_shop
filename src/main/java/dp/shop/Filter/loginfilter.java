@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 import dp.shop.Entity.User;
 import dp.shop.Service.Userlogin_Service_Inteface;
 import dp.shop.Service.Imp.Login_Serviec_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet Filter implementation class loginfilter
@@ -53,7 +55,10 @@ public class loginfilter implements Filter {
 		User user=null;
 		//二、创建cookie数组
 		Cookie[] cookie=request.getCookies();
-		Userlogin_Service_Inteface loginPD =new Login_Serviec_Imp();
+		//Userlogin_Service_Inteface loginPD =new Login_Serviec_Imp();
+
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+		Userlogin_Service_Inteface loginPD =webApplicationContext.getBean(Login_Serviec_Imp.class);
 		//三、判断数组cookie是否有值
 		if(cookie!=null) {
 			//遍历数组cookie

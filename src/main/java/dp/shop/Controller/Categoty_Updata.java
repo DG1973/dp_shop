@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import dp.shop.Entity.Category;
 import dp.shop.Service.Shop_Service_Interface;
 import dp.shop.Service.Imp.Shop_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Categoty_Updata
@@ -34,7 +36,9 @@ public class Categoty_Updata extends HttpServlet {
 		
 		//获取商品类别编号
 		String id=request.getParameter("id");
-		Shop_Service_Interface categoryByid=Shop_Service_Imp.getShopService();
+		//Shop_Service_Interface categoryByid=Shop_Service_Imp.getShopService();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Shop_Service_Interface categoryByid=webApplicationContext.getBean(Shop_Service_Imp.class);
 		try {
 			Category category=categoryByid.findCategoryById(Integer.parseInt(id));
 			if(category!=null) {
@@ -66,8 +70,10 @@ public class Categoty_Updata extends HttpServlet {
 
 		try {
 			category=new Category(Integer.parseInt(id),Integer.parseInt(parent_id),name,Integer.parseInt(status),Integer.parseInt(sort_order),new Date(),new Date());
-			shops_product =Shop_Service_Imp.getShopService();
-			
+
+
+			WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+			shops_product=webApplicationContext.getBean(Shop_Service_Imp.class);
 		}catch(NumberFormatException e) {
 			doGet(request, response);
 		}

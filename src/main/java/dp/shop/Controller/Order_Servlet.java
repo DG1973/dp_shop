@@ -13,6 +13,8 @@ import dp.shop.Entity.User;
 import dp.shop.Entity.VO.OrderVO;
 import dp.shop.Service.Order_Service_Interface;
 import dp.shop.Service.Imp.Order_Service_Impl;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Order_Servlet
@@ -38,7 +40,9 @@ public class Order_Servlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");	
 		User user=null;
 		
-		Order_Service_Interface order=new Order_Service_Impl();
+		//Order_Service_Interface order=new Order_Service_Impl();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Order_Service_Interface order=webApplicationContext.getBean(Order_Service_Impl.class);
 		
 		/**userOrderÎª¶©µ¥±í* */
 		//UserOrderMyBatis_Dao_Interface userOrder=new UserOrderMyBatis_Dao_Impl();

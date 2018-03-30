@@ -10,6 +10,9 @@ import dp.shop.Entity.PageModel;
 import dp.shop.Entity.Product;
 import dp.shop.Service.Shop_Service_Interface;
 import dp.shop.Service.Imp.Shop_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 /**
  * Servlet implementation class Product_Servlet
  */
@@ -42,7 +45,9 @@ public class Product_Servlet extends HttpServlet {
 		request.getRequestDispatcher("shop_product.jsp").forward(request, response);
 		*/
 		String pageNo=request.getParameter("pageNo");
-		Shop_Service_Interface shop=Shop_Service_Imp.getShopService();
+		//Shop_Service_Interface shop=Shop_Service_Imp.getShopService();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Shop_Service_Interface shop=webApplicationContext.getBean(Shop_Service_Imp.class);
 	    try {
 	    	 PageModel<Product>  pageModel=shop.findProductByPage((Integer.parseInt(pageNo)),6);
 	         request.setAttribute("pageModel", pageModel);

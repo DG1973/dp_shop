@@ -13,6 +13,8 @@ import dp.shop.Entity.VO.UserManageVO;
 import dp.shop.Service.User_Service_Interface;
 import dp.shop.Service.Userlogin_Service_Inteface;
 import dp.shop.Service.Imp.User_Service_Impl;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class User_Servlet
@@ -37,7 +39,9 @@ public class User_Servlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		User_Service_Interface user_manage=new User_Service_Impl();
+		//User_Service_Interface user_manage=new User_Service_Impl();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		User_Service_Interface user_manage=webApplicationContext.getBean(User_Service_Impl.class);
 		PageModel<UserManageVO> pageModel=user_manage.findAllUser(request);
 		
 		request.setAttribute("pageModel", pageModel);

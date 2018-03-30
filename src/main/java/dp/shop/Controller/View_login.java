@@ -18,6 +18,8 @@ import dp.shop.Entity.VO.UserVO;
 import dp.shop.MD5Utils.MD5Utils;
 import dp.shop.Service.Userlogin_Service_Inteface;
 import dp.shop.Service.Imp.Login_Serviec_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 
 /**
@@ -68,8 +70,11 @@ public class View_login extends HttpServlet {
 		String username=null;
 		String password=null;
 		String callback=request.getParameter("callback");
-		Userlogin_Dao_Interface logindao=new Login_Dao_Imp();
-		Userlogin_Service_Inteface loginPD =new Login_Serviec_Imp();
+		//Userlogin_Dao_Interface logindao=new Login_Dao_Imp();
+		//Userlogin_Service_Inteface loginPD =new Login_Serviec_Imp();
+		WebApplicationContext webApplicationContext=WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Userlogin_Dao_Interface logindao=webApplicationContext.getBean(Login_Dao_Imp.class);
+		Userlogin_Service_Inteface loginPD =webApplicationContext.getBean(Login_Serviec_Imp.class);
 		
 		username=request.getParameter("username");
 		password=request.getParameter("password");

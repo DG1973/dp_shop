@@ -13,7 +13,7 @@
 		<table border="box"  width="400px" height="400px" align="center">
 						<tr>
 				<td>类别id</td>
-				<td><input type="text" name="id"  placeholder="请输入商品id"  value="${category.id}"></td>
+				<td><input type="text" name="id"  placeholder="请输入商品id" readonly="readonly"  value="${category.id}"></td>
 			</tr>
 			<tr>
 				<td>分类id</td>

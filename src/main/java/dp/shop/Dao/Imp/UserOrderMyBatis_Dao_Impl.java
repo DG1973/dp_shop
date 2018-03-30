@@ -12,13 +12,22 @@ import dp.shop.Entity.Cart;
 import dp.shop.Entity.PageModel;
 import dp.shop.Entity.UserOrder;
 import dp.shop.Exception.orderException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserOrderMyBatis_Dao_Impl implements UserOrderMyBatis_Dao_Interface {
+
+	@Autowired
+	SqlSessionFactory  factory;
+
+	public void setFactory(SqlSessionFactory factory) {
+		this.factory = factory;
+	}
 
 	@Override
 	public int addOrder(UserOrder userOrder) throws orderException {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(true);
 		
 		int num= session.insert("dp.shop.UserOrder.addOrder", userOrder);
@@ -32,7 +41,6 @@ public class UserOrderMyBatis_Dao_Impl implements UserOrderMyBatis_Dao_Interface
 	public PageModel<UserOrder> findUserOrder(Integer pageNo, Integer pageSize, Integer user_id) throws orderException {
 		// TODO Auto-generated method stub
 		PageModel<UserOrder> pageModel=new PageModel<UserOrder>();
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		Integer num=session.selectOne("dp.shop.UserOrder.findAllUserOrder", user_id);
 		int totalCount;
@@ -64,7 +72,6 @@ public class UserOrderMyBatis_Dao_Impl implements UserOrderMyBatis_Dao_Interface
 	public PageModel<UserOrder> findUserOrderDetailByOrderNo(Integer pageNo,Integer pageSize,Long order_no,Integer user_id) throws orderException {
 		// TODO Auto-generated method stub
 		PageModel<UserOrder> pageModel=new PageModel<UserOrder>();
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("user_id", user_id);
@@ -102,7 +109,6 @@ public class UserOrderMyBatis_Dao_Impl implements UserOrderMyBatis_Dao_Interface
 	@Override
 	public int updateOrderByOrderNo(Long order_no,Integer status) throws orderException {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		Map<String,Object> map=new HashMap<String,Object>();
 		

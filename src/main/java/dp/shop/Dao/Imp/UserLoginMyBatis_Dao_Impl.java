@@ -12,13 +12,23 @@ import dp.shop.Dao.Userlogin_Dao_Interface;
 import dp.shop.Entity.Cart;
 import dp.shop.Entity.PageModel;
 import dp.shop.Entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository("UserLoginMyBatis_Dao")
 public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
+
+	@Autowired
+	SqlSessionFactory  factory;
+
+	public void setFactory(SqlSessionFactory factory) {
+		this.factory = factory;
+	}
 
 	@Override
 	public int checkUserName(String username) {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		Integer num=null;
 		num=session.selectOne("dp.shop.UserLogin.checkUserName",username);
@@ -33,8 +43,7 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	@Override
 	public User findUserByUsernameAndPassword(String username, String password) {
 		// TODO Auto-generated method stub		
-		
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		
 		Map<String,String> map=new HashMap<String,String>();
@@ -49,7 +58,7 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	@Override
 	public int updateTokenByUserId(Integer userid, String token) {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(true);
 		
 		Map<String,Object> map=new HashMap<String,Object>();
@@ -65,7 +74,7 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	@Override
 	public User findUserByToken(String token) {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		
 		User user=session.selectOne("dp.shop.UserLogin.findUserByToken",token);
@@ -77,7 +86,7 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	@Override
 	public int addUser(User user) {
 		// TODO Auto-generated method stub
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(true);
 		
 		int num=session.insert("dp.shop.UserLogin.addUser", user);
@@ -85,7 +94,7 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	}
 	@Override
 	public int findAllUserCount() {
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
+
 		SqlSession session=factory.openSession(false);
 		int num=0;
 		num=session.selectOne("dp.shop.UserLogin.findAllUserCount");	
@@ -96,7 +105,6 @@ public class UserLoginMyBatis_Dao_Impl implements Userlogin_Dao_Interface {
 	public PageModel<User> findAllUser(Integer pageNo, Integer pageSize) {
 		// TODO Auto-generated method stub
 		PageModel<User> pageModel=new PageModel<User>();
-		SqlSessionFactory  factory=MybatisUtils.getSqlSessionFactory();
 		SqlSession session=factory.openSession(false);
 		int num=session.selectOne("dp.shop.UserLogin.findAllUserCount");
 		if(num!=0) {

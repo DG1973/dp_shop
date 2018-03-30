@@ -12,13 +12,13 @@ public class MybatisUtils {
 	private static SqlSessionFactory sqlSessionFactory=null;
 	
 	static {
-		//1£¬¶ÁÈ¡ÅäÖÃÎÄ¼þ
-		String config="dp/shop/Config/MyBatisConfig.xml";
+		//1ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+		String config= "MyBatisConfig.xml";
 		Reader reader=null;
 		try {
 			reader=Resources.getResourceAsReader(config);
 			
-			//2£¬Éú³ÉSqlSessionFactory    ÎªSqlSessionµÄ¹¤³§£¬ÓÃÓÚ½¨Á¢ÓëÊý¾Ý¿âµÄ»á»°¡£
+			//2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SqlSessionFactory    ÎªSqlSessionï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½Ä»á»°ï¿½ï¿½
 			 sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);
 			
 		} catch (IOException e) {
@@ -27,7 +27,7 @@ public class MybatisUtils {
 		}
 	}
 	/**
-	 * »ñÈ¡SqlSessionFactory
+	 * ï¿½ï¿½È¡SqlSessionFactory
 	 * */
 	public static SqlSessionFactory getSqlSessionFactory() {
 		
@@ -35,10 +35,10 @@ public class MybatisUtils {
 	}
 	
 	/**
-	*¹Ø±ÕÁ¬½Ó
+	*ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½
 	**/
 	
-	//7£¬¹Ø±ÕSqlSession
+	//7ï¿½ï¿½ï¿½Ø±ï¿½SqlSession
 	public static void  close(SqlSession sqlSession) {
 		sqlSession.close();
 		

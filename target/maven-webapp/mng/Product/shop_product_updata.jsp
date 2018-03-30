@@ -14,7 +14,7 @@
 	<table border="box"  width="400px" height="400px" align="center">
 						<tr>
 				<td>商品名id</td>
-				<td><input type="text" name="id"  placeholder="请输入商品id"  value="${product.id }"></td>
+				<td><input type="text" name="id"  placeholder="请输入商品id" readonly="readonly"  value="${product.id }"></td>
 			</tr>
 			<tr>
 				<td>分类名称</td>

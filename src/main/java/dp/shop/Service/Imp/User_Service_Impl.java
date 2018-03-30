@@ -5,16 +5,26 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.sun.xml.internal.ws.server.sei.SEIInvokerTube;
 import dp.shop.Dao.Userlogin_Dao_Interface;
 import dp.shop.Dao.Imp.UserLoginMyBatis_Dao_Impl;
 import dp.shop.Entity.PageModel;
 import dp.shop.Entity.User;
 import dp.shop.Entity.VO.UserManageVO;
 import dp.shop.Service.User_Service_Interface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class User_Service_Impl implements User_Service_Interface {
+	@Autowired
+	Userlogin_Dao_Interface user_dao;
 
-	Userlogin_Dao_Interface user_dao=new UserLoginMyBatis_Dao_Impl();
+	public void setUser_dao(Userlogin_Dao_Interface user_dao) {
+		this.user_dao = user_dao;
+	}
+
+	//Userlogin_Dao_Interface user_dao=new UserLoginMyBatis_Dao_Impl();
 	@Override
 	public PageModel<UserManageVO> findAllUser(HttpServletRequest request) {
 		String _pageNo=request.getParameter("pageNo");

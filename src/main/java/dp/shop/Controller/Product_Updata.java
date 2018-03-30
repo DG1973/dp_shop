@@ -15,6 +15,8 @@ import dp.shop.Entity.Category;
 import dp.shop.Entity.Product;
 import dp.shop.Service.Shop_Service_Interface;
 import dp.shop.Service.Imp.Shop_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Product_Updata
@@ -40,7 +42,9 @@ public class Product_Updata extends HttpServlet {
 		//获取商品编号
 		String id=request.getParameter("id");
 		List<Category> category=null;
-		Shop_Service_Interface productByid=Shop_Service_Imp.getShopService();
+		//Shop_Service_Interface productByid=Shop_Service_Imp.getShopService();
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Shop_Service_Interface productByid=webApplicationContext.getBean(Shop_Service_Imp.class);
 		try {
 			Product product=productByid.findProductById(Integer.parseInt(id));
 			category=productByid.findAllCategory();
@@ -80,7 +84,9 @@ public class Product_Updata extends HttpServlet {
 
 		try {
 			product=new Product(Integer.parseInt(id),Integer.parseInt(category_id),name, subtitle,main_image,sub_images,detail,x, Integer.parseInt(stock),Integer.parseInt(status),new Date(),new Date());
-			shops_product =Shop_Service_Imp.getShopService();
+			
+			WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+			shops_product=webApplicationContext.getBean(Shop_Service_Imp.class);
 			System.out.println(product);
 		}catch(NumberFormatException e) {
 			

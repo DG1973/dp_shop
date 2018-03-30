@@ -12,6 +12,8 @@ import dp.shop.Entity.User;
 import dp.shop.Entity.VO.CartVO;
 import dp.shop.Service.Cart_Service_Interface;
 import dp.shop.Service.Imp.Cart_Servic_Impl;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Cart_Servlet
@@ -40,8 +42,9 @@ public class Cart_Servlet extends HttpServlet {
 		
 		
 		User user=null;
-		Cart_Service_Interface cart=new Cart_Servic_Impl();
-		//CartMyBatis_Dao_Interface cartdao=new CartMyBatis_Dao_impl();
+		//Cart_Service_Interface cart=new Cart_Servic_Impl();
+		WebApplicationContext webApplicationContext=WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Cart_Service_Interface cart=webApplicationContext.getBean(Cart_Servic_Impl.class);
 		String operation=request.getParameter("operation");
 		HttpSession session=request.getSession();
 		Object object=session.getAttribute("user");

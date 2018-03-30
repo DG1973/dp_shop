@@ -11,6 +11,8 @@ import dp.shop.Entity.Address;
 import dp.shop.Entity.User;
 import dp.shop.Service.Address_Service_Interface;
 import dp.shop.Service.Imp.Address_Service_Imp;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class Categoty_Updata
@@ -38,7 +40,10 @@ public class Address_Updata extends HttpServlet {
 		User user=null;
 		Address address =null;
 		String id=request.getParameter("id");
-		Address_Service_Interface addressByIdAndUser_id=Address_Service_Imp.getAddressService();
+		//Address_Service_Interface addressByIdAndUser_id=Address_Service_Imp.getAddressService();
+		//从spring框架中获取实例
+		WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+		Address_Service_Interface addressByIdAndUser_id=webApplicationContext.getBean(Address_Service_Imp.class);
 		if(o!=null&&o instanceof User) {
 			user=(User) o;
 		}
@@ -89,8 +94,12 @@ public class Address_Updata extends HttpServlet {
 			String receiver_zip=request.getParameter("receiver_zip");
 			try {
 				address=new Address(Integer.parseInt(id), user.getId(), receiver_name, receiver_phone, receiver_mobile, receiver_province, receiver_city, receiver_district, receiver_address, receiver_zip, null, null);
-				shops_address =Address_Service_Imp.getAddressService();
-				
+				//shops_address =Address_Service_Imp.getAddressService();
+				//从spring框架中获取实例
+				WebApplicationContext webApplicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+				shops_address=webApplicationContext.getBean(Address_Service_Imp.class);
+
+
 			}catch(NumberFormatException e) {
 				doGet(request, response);
 			}
